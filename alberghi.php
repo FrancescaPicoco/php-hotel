@@ -63,7 +63,7 @@
       <tbody>
         <?php
         foreach ($hotels as $hotel) {
-            if($hotel['vote']<=$voto){
+            if($hotel['vote']==$voto){
                 echo "<tr>";
                 echo "<td>".$hotel['name']."</td>";
                 echo "<td>".$hotel['description']."</td>";
