@@ -49,34 +49,44 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body>
-    <table class="table">
+<body class="bg-black">
+    <table class="table table-dark table-hover mt-5">
         <thead>
-          <tr>
-            <th scope="col">name</th>
-            <th scope="col">description</th>
-            <th scope="col">parking</th>
-            <th scope="col">vote</th>
-            <th scope="col">distanceToCenter</th>
+          <tr class='text-center'>
+            <th class='text-warning'>name</th>
+            <th class='text-warning'>description</th>
+            <th class='text-warning'>parking</th>
+            <th class='text-warning'>vote</th>
+            <th class='text-warning'>distanceToCenter</th>
           </tr>
       </thead>
       <tbody>
         <?php
         foreach ($hotels as $hotel) {
             if($hotel['vote']==$voto){
-                echo "<tr>";
+                echo "<tr class='text-center'>";
                 echo "<td>".$hotel['name']."</td>";
                 echo "<td>".$hotel['description']."</td>";
-                echo "<td>".$hotel['parking']."</td>";
+                // echo "<td>".$hotel['parking']."</td>";
+                 if($hotel['parking']==false){
+                     echo "<td>"."none"."</td>";
+                 }else{
+                     echo "<td>".$hotel['parking']."</td>";
+                 }
                 echo "<td>".$voto."</td>";
                 echo "<td>".$hotel['distance_to_center']."</td>";
                 echo "</tr>";
             }
             if($voto==""){
-                echo "<tr>";
+                echo "<tr class='text-center'>";
                 echo "<td>".$hotel['name']."</td>";
                 echo "<td>".$hotel['description']."</td>";
-                echo "<td>".$hotel['parking']."</td>";
+                // echo "<td>".$hotel['parking']."</td>";
+                if($hotel['parking']==false){
+                    echo "<td>"."none"."</td>";
+                }else{
+                    echo "<td>".$hotel['parking']."</td>";
+                }
                 echo "<td>".$hotel['vote']."</td>";
                 echo "<td>".$hotel['distance_to_center']."</td>";
                 echo "</tr>";
