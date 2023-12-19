@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,10 @@
     <title>Document2</title>
 </head>
 <body>
-    
+    <form action="alberghi.php">
+        <label for="vote">Cerca per voto</label>
+        <input type="number" id="vote" name="vote" />
+        <button type="submit">Cerca</button>
+    </form>    
 </body>
 </html>
